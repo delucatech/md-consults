@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MD Consult - Integrated Industrial Health Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .nav-container {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .nav-container.floating {
+      margin: 1rem 2rem;
+      border-radius: 0.5rem;
+    }
+
+    .nav-container.sticky {
+      margin: 0;
+      border-radius: 0;
+      box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-transition {
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .nav-hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    .nav-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .scroll-smooth {
+      scroll-behavior: smooth;
+    }
+
+    #mobile-menu {
+      display: none;
+    }
+
+    #mobile-menu.active {
+      display: block;
+    }
+
+  </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900 scroll-smooth">
+
+  <!-- Header with Navigation -->
+  <header class="fixed w-full top-0 z-50 nav-transition" id="navbar-wrapper">
+    <div class="nav-container bg-white shadow-sm" id="navbar">
+      <div class="container mx-auto px-6 py-3 md:py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <a href="#" class="flex items-center space-x-2">
+              <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                <span class="text-white text-xl font-bold">MD</span>
+              </div>
+              <span class="text-xl font-semibold text-gray-900 tracking-tight">MD Consult</span>
+            </a>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-6">
+            <nav class="flex space-x-6">
+              <a href="#home" class="text-gray-700 hover:text-blue-500 transition-colors duration-300 font-medium">Home</a>
+              <a href="#about" class="text-gray-700 hover:text-blue-500 transition-colors duration-300 font-medium">About</a>
+              <a href="#services" class="text-gray-700 hover:text-blue-500 transition-colors duration-300 font-medium">Services</a>
+              <a href="#contact" class="text-gray-700 hover:text-blue-500 transition-colors duration-300 font-medium">Contact</a>
+            </nav>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300 font-semibold">
+              Get Started
+            </button>
+          </div>
+
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-700 hover:text-gray-900 transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden mt-2 py-2 bg-white shadow-md rounded-md">
+          <div class="px-4 py-3">
+            <a href="#home" class="block py-2 text-gray-700 hover:bg-gray-100 rounded-md px-3 transition-colors duration-200 font-medium">Home</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:bg-gray-100 rounded-md px-3 transition-colors duration-200 font-medium">About</a>
+            <a href="#services" class="block py-2 text-gray-700 hover:bg-gray-100 rounded-md px-3 transition-colors duration-200 font-medium">Services</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:bg-gray-100 rounded-md px-3 transition-colors duration-200 font-medium">Contact</a>
+            <a href="#" class="block mt-3 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-md px-3 transition-colors duration-300 font-semibold text-center">Get Started</a>
+          </div>
+          <div class="px-6 py-4">
+            <h5 class="font-semibold text-lg mb-6 text-gray-900">Contact Info</h5>
+            <ul class="space-y-4">
+              <li class="flex items-center space-x-3 py-2">
+                <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <span class="text-gray-700">123 Business Ave, Suite 100<br>New York, NY 10001</span>
+              </li>
+              <li class="flex items-center space-x-3 py-2">
+                <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <span class="text-gray-700">
+                  <a href="mailto:contact@mdconsult.com" class="hover:text-blue-500 transition-colors">contact@mdconsult.com</a>
+                </span>
+              </li>
+              <li class="flex items-center space-x-3 py-2">
+                <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+                <span class="text-gray-700">+1 (555) 123-4567</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="pt-24 md:pt-32 bg-gray-50">
+    <div class="container mx-auto px-6 py-16 md:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+        <div class="order-2 lg:order-1" data-aos="fade-right">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+            Integrated Industrial Health Solutions for a Safer Workplace
+          </h1>
+          <p class="text-lg text-gray-700 leading-relaxed mb-8 md:mb-12">
+            MD Consult provides AI-powered solutions to streamline your workplace health management, ensuring compliance, enhancing safety, and prioritizing employee well-being.
+          </p>
+          <div class="flex flex-wrap gap-4 md:gap-6">
+            <a href="#services" class="group bg-blue-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-600 transition-all duration-300 shadow-md hover:shadow-lg flex items-center space-x-2">
+              <span>Explore Services</span>
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </a>
+            <a href="#contact" class="group border border-blue-500 text-blue-500 px-6 py-3 rounded-md font-semibold hover:bg-blue-50 hover:text-white transition-all duration-300 flex items-center space-x-2">
+              <span>Request a Demo</span>
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2" data-aos="fade-left">
+          <img src="https://placehold.co/800x600" alt="Healthcare Dashboard" class="rounded-xl shadow-lg"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Key Features</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Explore the features that make MD Consult the leading solution for industrial health management.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        <div class="p-6 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Automated Compliance Tracking</h3>
+          <p class="text-gray-700 leading-relaxed">Effortlessly monitor and maintain regulatory compliance with automated tracking and alerts.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">AI-Powered Injury Management</h3>
+          <p class="text-gray-700 leading-relaxed">Leverage AI for efficient injury documentation, analysis, and streamlined management processes.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Comprehensive Reporting & Analytics</h3>
+          <p class="text-gray-700 leading-relaxed">Gain deep insights into your workplace health data with detailed reports and analytics dashboards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+        <div data-aos="fade-right">
+          <img src="https://placehold.co/800x600/edf2f7/808080?text=About+Us+Image" alt="About MD Consult" class="rounded-xl shadow-lg"/>
+        </div>
+        <div data-aos="fade-left">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About MD Consult</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-8">
+            MD Consult is dedicated to transforming industrial health management through innovative technology. We empower businesses to create safer, healthier, and more compliant workplaces.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mb-8">
+            Our platform is built on the principles of efficiency, accuracy, and employee well-being, providing a comprehensive suite of tools for modern industrial health needs.
+          </p>
+          <a href="#" class="inline-flex items-center font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">
+            Learn More About Us
+            <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          We offer a comprehensive range of industrial health services tailored to meet your specific needs.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.042A8.967 8.967 0 006 3.012m0 6.03a8.967 8.967 0 016-3.012m6 0a8.967 8.967 0 00-6 3.012m0 6.03a8.967 8.967 0 016-3.012M12 6.042a8.967 8.967 0 016 3.03m-6 6.03a8.967 8.967 0 006 3.03m-6-6.042a8.967 8.967 0 00-6-3.03m6 3.03a8.967 8.967 0 01-6 3.03"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Medical Surveillance Programs</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">Comprehensive health screenings and ongoing monitoring to ensure employee well-being and regulatory compliance.</p>
+          <a href="#" class="inline-flex items-center font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">
+            Learn More
+            <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Injury Management & Second Injury Fund</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">Efficiently manage workplace injuries and navigate second injury fund processes with our expert solutions.</p>
+          <a href="#" class="inline-flex items-center font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">
+            Learn More
+            <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-1.343 3-3s-1.343-3-3-3m0 6c1.657 0 3-1.343 3-3s-1.343-3-3-3"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Mental Health & Well-being Programs</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">Prioritize employee mental health with proactive screening, support, and well-being programs.</p>
+          <a href="#" class="inline-flex items-center font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">
+            Learn More
+            <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
+          <div data-aos="fade-right">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+            <p class="text-lg text-gray-600 mb-8">Ready to discuss how MD Consult can help your organization? Reach out to us today.</p>
+            <div class="space-y-6">
+              <div class="flex items-center space-x-4">
+                <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg text-gray-900">Phone</h4>
+                  <p class="text-gray-600">+1 (555) 123-4567</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg text-gray-900">Email</h4>
+                  <p class="text-gray-600">
+                    <a href="mailto:contact@mdconsult.com" class="hover:text-blue-500 transition-colors">contact@mdconsult.com</a>
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg text-gray-900">Location</h4>
+                  <p class="text-gray-600">123 Business Ave, Suite 100<br>New York, NY 10001</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Contact Form -->
+          <div data-aos="fade-left">
+            <form class="space-y-6 bg-white p-6 md:p-8 rounded-xl shadow-md" id="contactForm"> <!-- Added ID to the form -->
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                <input type="text" id="name" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow" placeholder="John Doe"/>
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                <input type="email" id="email" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow" placeholder="john@example.com"/>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <textarea id="message" rows="4" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow" placeholder="Your message here..."></textarea>
+              </div>
+              <button type="submit" class="w-full bg-blue-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-blue-600 transition-all duration-300 font-semibold flex items-center justify-center space-x-2 group">
+                <span>Send Message</span>
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12 md:py-16">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
+        <div class="space-y-4">
+          <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+              <span class="text-white text-xl font-bold">MD</span>
+            </div>
+            <h4 class="text-lg font-semibold text-white">MD Consult</h4>
+          </div>
+          <p class="text-gray-400 text-sm">Leading provider of industrial health management solutions, empowering workplaces since 2010.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors flex items-center justify-center">
+              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors flex items-center justify-center">
+              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </a>
+            <a href="#" class="w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors flex items-center justify-center">
+              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path fill="currentColor" d="M19 0h-14c-2.762 0-5 2.238-5 5v14c0 2.762 2.238 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.762-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.828 0-1.5-.672-1.5-1.5 0-.828.672-1.5 1.5-1.5.828 0 1.5.672 1.5 1.5 0 .828-.672 1.5-1.5 1.5zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h5 class="font-semibold text-lg text-white mb-2">Quick Links</h5>
+          <ul class="space-y-2">
+            <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h5 class="font-semibold text-lg text-white mb-2">Services</h5>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Medical Surveillance</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Injury Management</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mental Health</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Compliance</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h5 class="font-semibold text-lg text-white mb-2">Contact Info</h5>
+          <ul class="space-y-2">
+            <li class="flex items-center space-x-2">
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <span class="text-gray-400">123 Business Ave, Suite 100<br>New York, NY 10001</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              <span class="text-gray-400">
+                <a href="mailto:contact@mdconsult.com" class="hover:text-white transition-colors">contact@mdconsult.com</a>
+              </span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <span class="text-gray-400">+1 (555) 123-4567</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-gray-700 mt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
+          <p class="text-gray-400 text-sm">© 2025 MD Consult. All rights reserved.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Initialize AOS -->
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true
+    });
+  </script>
+
+  <!-- Navigation Behavior Script and Contact Form Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navbar = document.getElementById('navbar-wrapper');
+      const navContainer = document.getElementById('navbar');
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const contactForm = document.getElementById('contactForm'); // Get the form element
+
+      let lastScroll = 0;
+      let scrollingUp = false;
+
+      navContainer.classList.add('floating');
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        scrollingUp = currentScroll < lastScroll;
+
+        if (currentScroll <= 0) {
+          navbar.classList.remove('nav-hidden');
+          navbar.classList.add('nav-visible');
+          navContainer.classList.add('floating');
+          navContainer.classList.remove('sticky');
+        } else if (scrollingUp) {
+          navbar.classList.remove('nav-hidden');
+          navbar.classList.add('nav-visible');
+          navContainer.classList.remove('floating');
+          navContainer.classList.add('sticky');
+        } else {
+          navbar.classList.remove('nav-visible');
+          navbar.classList.add('nav-hidden');
+        }
+
+        lastScroll = currentScroll;
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+      });
+
+      // Contact Form Email Composition
+      contactForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        const mailtoLink = `mailto:contact@mdconsult.com?subject=Website Contact Form Submission&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
+
+        window.location.href = mailtoLink; // Open default email client
+      });
+    });
+  </script>
+
+</body>
+</html>
