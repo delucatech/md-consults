@@ -19,7 +19,6 @@
     .nav-transition{transition:transform .3s ease-in-out,opacity .3s ease-in-out}
     .nav-hidden{transform:translateY(-100%);opacity:0}
     .nav-visible{transform:translateY(0);opacity:1}
-    .scroll-smooth{scroll-behavior:smooth}
     #mobile-menu{display:none}
     #mobile-menu.active{display:block}
   </style>
@@ -31,21 +30,20 @@
     <div class="nav-container bg-white shadow-sm" id="navbar">
       <div class="container mx-auto px-6 py-3 md:py-4">
         <div class="flex items-center justify-between">
-          <!-- logo -->
           <a href="#" class="flex items-center space-x-2">
             <img src="logo.png" alt="MD Consult Logo" style="height:40px;width:110px">
           </a>
 
           <!-- desktop nav -->
           <nav class="hidden md:flex items-center space-x-6">
-            <a href="#home"     class="text-gray-700 hover:text-blue-500 transition-colors font-medium">Home</a>
-            <a href="#about"    class="text-gray-700 hover:text-blue-500 transition-colors font-medium">About</a>
-            <a href="#solutions" class="text-gray-700 hover:text-blue-500 transition-colors font-medium">Solutions</a>
-            <a href="#contact"  class="text-gray-700 hover:text-blue-500 transition-colors font-medium">Contact</a>
+            <a href="#home"      class="text-gray-700 hover:text-blue-500 font-medium">Home</a>
+            <a href="#about"     class="text-gray-700 hover:text-blue-500 font-medium">About</a>
+            <a href="#solutions" class="text-gray-700 hover:text-blue-500 font-medium">Solutions</a>
+            <a href="#contact"   class="text-gray-700 hover:text-blue-500 font-medium">Contact</a>
 
             <!-- LOGIN -->
             <a href="https://physicianconnection.net/LoginMd"
-               class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors font-semibold">
+               class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 font-semibold">
                Log&nbsp;In
             </a>
           </nav>
@@ -83,7 +81,7 @@
             Employee&nbsp;Data Collection
           </h1>
           <p class="text-lg text-gray-700 mb-8 md:mb-12">
-            Automated medical data collection that simplifies medical management and streamlines Second Injury Fund documentation.
+            Automated medical data collection that simplifies medical management and powers precise Second&nbsp;Injury&nbsp;Fund documentation.
           </p>
 
           <div class="flex flex-wrap gap-4">
@@ -103,14 +101,14 @@
             </a>
           </div>
 
-          <!-- note -->
           <p class="mt-4 text-sm text-gray-500">
-            Note:&nbsp;“Log&nbsp;In” redirects to the Physician Connection portal.
+            *Log&nbsp;In redirects to the Physician Connection portal.*
           </p>
         </div>
 
         <div data-aos="fade-left">
-          <img src="image1.png" alt="Automated medical dashboard" class="rounded-xl shadow-lg">
+          <!-- Replace with actual dashboard artwork when available -->
+          <img src="image1.png" alt="Automated medical data dashboard mockup" class="rounded-xl shadow-lg">
         </div>
       </div>
     </div>
@@ -121,23 +119,19 @@
     <div class="container mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div data-aos="fade-right">
-          <img src="image2.webp" alt="MD Consult team" class="rounded-xl shadow-lg">
+          <img src="image2.webp" alt="Physicians collaborating at MD Consults" class="rounded-xl shadow-lg">
         </div>
         <div data-aos="fade-left">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About&nbsp;MD Consult</h2>
-          <p class="text-lg text-gray-700 mb-8 leading-relaxed">
-            MD Consults is a physician-led consulting firm specializing in orthopedic expertise and technology-driven solutions
-            that reduce employer costs and improve injury management. Our proprietary application collects and analyzes
-            Second Injury Fund documentation, while our platform enables prompt, compliant workplace-injury reporting.
-            From medical record review to telemedicine support, we help employers streamline compliance, manage risk,
-            and enhance employee outcomes with clinically informed strategies. :contentReference[oaicite:1]{index=1}
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About&nbsp;MD Consults</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-8">
+            We are a physician-led medical consulting firm specializing in orthopedic expertise and technology-driven solutions that reduce employer costs and improve injury management. Services span a proprietary Second Injury Fund (SIF) application, prompt and compliant workplace-injury reporting, and expert medical consultation—from medical-record review to telemedicine support. Our team streamlines compliance, manages risk, and enhances employee outcomes through clinically informed strategies.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= SOLUTIONS / FEATURES ======= -->
+  <!-- ======= SOLUTIONS ======= -->
   <section id="solutions" class="py-16 md:py-24 bg-gray-50">
     <div class="container mx-auto px-6">
       <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
@@ -147,7 +141,7 @@
         </p>
       </div>
 
-      <!-- 3 solution cards -->
+      <!-- three solution cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Medical Case Review -->
         <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
@@ -158,7 +152,7 @@
             </svg>
           </div>
           <h3 class="text-xl font-semibold text-gray-900 mb-2">Medical&nbsp;Case&nbsp;Review</h3>
-          <p class="text-gray-700">Let our experts assist you in injury management and claims evaluation.</p>
+          <p class="text-gray-700">Let our experts assist you in injury management.</p>
         </div>
 
         <!-- Second Injury Fund Management -->
@@ -169,8 +163,8 @@
                     d="M3 3h18M9 3v18M3 9h18"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Second Injury Fund Management</h3>
-          <p class="text-gray-700">Streamlining the SIF process—saving time and money while ensuring compliance.</p>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Second&nbsp;Injury&nbsp;Fund Management</h3>
+          <p class="text-gray-700">Our application streamlines the process, saving time and money in navigating the Second&nbsp;Injury&nbsp;Fund.</p>
         </div>
 
         <!-- Injury Documentation -->
@@ -181,29 +175,29 @@
                     d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Injury Documentation&nbsp;&amp;&nbsp;Management</h3>
-          <p class="text-gray-700">Our mobile app makes workplace-accident documentation fast and compliant.</p>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Injury&nbsp;Documentation&nbsp;&amp;&nbsp;Management</h3>
+          <p class="text-gray-700">Our phone application assists in the critical function of workplace-accident documentation.</p>
         </div>
       </div>
 
       <!-- SIF bullet list -->
       <div class="mt-16 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="400">
-        <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Our Second Injury Fund Program?</h3>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Our Second&nbsp;Injury&nbsp;Fund Program?</h3>
         <ul class="space-y-3 list-disc list-inside text-gray-700">
-          <li>Annual screening and documentation maintenance for all staff.</li>
-          <li>Physician-led analysis identifies “at-risk” employees before an incident occurs.</li>
-          <li>Comprehensive support when an eligible employee is injured, ensuring reimbursement qualification.</li>
+          <li>MD Consults conducts yearly screenings of your staff for the Second&nbsp;Injury&nbsp;Fund and maintains the documentation.</li>
+          <li>The program’s medical team analyzes data and informs you of potential “at-risk” employees.</li>
+          <li>When an eligible employee is injured, we assist with the documentation required to qualify for state reimbursement.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ======= APPLICATION / WEB-PORTAL / REPORTING ======= -->
+  <!-- ======= MD CONSULTS APPLICATION (1-2-3) ======= -->
   <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-6">
       <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          MD Consults Application – Second Injury Fund Program
+          MD&nbsp;Consults Application – Second&nbsp;Injury&nbsp;Fund Program
         </h2>
       </div>
 
@@ -213,8 +207,8 @@
         <div class="p-6 rounded-xl bg-gray-50 shadow-md hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
           <h3 class="text-xl font-semibold mb-3">1&nbsp;&nbsp;Application</h3>
           <ul class="list-disc list-inside text-gray-700 space-y-2">
-            <li>Document&nbsp;Document&nbsp;Document – we acquire and maintain medical status so you qualify for recovery.</li>
-            <li>Proactive health management informed by your data.</li>
+            <li><strong>Document Document Document:</strong> Acquiring, updating, and maintaining an employee’s medical status is critical to qualify for financial recovery from the SIF. MD Consults relieves your organization of this burden.</li>
+            <li><strong>Proactive Health Management:</strong> Our medical professionals use your company’s health information to help create a program that reduces risk and increases productivity.</li>
           </ul>
         </div>
 
@@ -222,26 +216,27 @@
         <div class="p-6 rounded-xl bg-gray-50 shadow-md hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="200">
           <h3 class="text-xl font-semibold mb-3">2&nbsp;&nbsp;Web&nbsp;Portal</h3>
           <ul class="list-disc list-inside text-gray-700 space-y-2">
-            <li>Access employee data anywhere, anytime.</li>
-            <li>Integrates seamlessly with existing workflows.</li>
+            <li>Access employee SIF data anywhere, anytime via a secure browser dashboard.</li>
+            <li>Integrates seamlessly with your existing safety-management workflows.</li>
+            <li>Instant visibility into screening status, injury reports, and reimbursement progress.</li>
           </ul>
         </div>
 
         <!-- 3. Custom Reporting -->
         <div class="p-6 rounded-xl bg-gray-50 shadow-md hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="300">
-          <h3 class="text-xl font-semibold mb-3">3&nbsp;&nbsp;Custom Reporting</h3>
+          <h3 class="text-xl font-semibold mb-3">3&nbsp;&nbsp;Custom&nbsp;Reporting</h3>
           <ul class="list-disc list-inside text-gray-700 space-y-2">
-            <li>Use the Louisiana SIF you already pay into—recapture costs through data-driven insights.</li>
-            <li>Protect against fraud with legally binding documentation.</li>
-            <li>Affordable: a fraction of potential financial loss.</li>
-            <li>Expert claim-assistance, including medical “merging” requirements.</li>
+            <li><strong>You paid for it—use it:</strong> Louisiana’s SIF is funded through your workers-comp fees. Don’t miss the chance to recover expenses by maintaining proper documentation.</li>
+            <li><strong>Protection against fraud:</strong> SIF paperwork is legally binding. Failure to disclose conditions can nullify injury claims.</li>
+            <li><strong>Affordability:</strong> MD Consults manages your SIF program for a fraction of a potential loss.</li>
+            <li><strong>Claim Assistance:</strong> Our medical experts prepare every document required for SIF reimbursement, addressing the critical “merging” of medical conditions needed for qualification.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= CONTACT (unchanged) ======= -->
+  <!-- ======= CONTACT ======= -->
   <section id="contact" class="py-16 md:py-24 bg-gray-50">
     <div class="container mx-auto px-6">
       <div class="max-w-5xl mx-auto">
@@ -249,9 +244,9 @@
           <div data-aos="fade-right">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Get&nbsp;in&nbsp;Touch</h2>
             <p class="text-lg text-gray-600 mb-8">
-              Ready to learn how MD Consult can help your organization? Reach out today.
+              Ready to see how MD Consults can help your organization? Reach out today.
             </p>
-            <!-- contact info -->
+
             <div class="space-y-6">
               <!-- location -->
               <div class="flex items-center space-x-4">
@@ -319,11 +314,10 @@
     </div>
   </section>
 
-  <!-- ======= FOOTER (unchanged content) ======= -->
+  <!-- ======= FOOTER (unchanged) ======= -->
   <footer class="bg-gray-900 text-gray-300 py-12 md:py-16">
     <div class="container mx-auto px-6">
-      <!-- … (original footer code stays the same) … -->
-      <!-- Keep your existing footer markup here -->
+      <!-- Keep your existing footer markup or insert the same footer code you provided previously -->
     </div>
   </footer>
 
@@ -332,21 +326,21 @@
     AOS.init({duration:800,easing:'ease-out-cubic',once:true});
 
     document.addEventListener('DOMContentLoaded',()=>{
-      const navbar      = document.getElementById('navbar-wrapper');
-      const navContainer= document.getElementById('navbar');
-      const mobileBtn   = document.getElementById('mobile-menu-button');
-      const mobileMenu  = document.getElementById('mobile-menu');
-      const contactForm = document.getElementById('contactForm');
+      const navbar   = document.getElementById('navbar-wrapper');
+      const navInner = document.getElementById('navbar');
+      const mobileBtn= document.getElementById('mobile-menu-button');
+      const mobile   = document.getElementById('mobile-menu');
+      const form     = document.getElementById('contactForm');
+      let lastScroll = 0;
 
-      let lastScroll=0;
-      navContainer.classList.add('floating');
+      navInner.classList.add('floating');
 
       window.addEventListener('scroll',()=>{
-        const current=window.pageYOffset, up=current<lastScroll;
-        if(current<=0){navbar.classList.add('nav-visible');navContainer.classList.replace('sticky','floating')}
-        else if(up){navbar.classList.add('nav-visible');navContainer.classList.replace('floating','sticky')}
+        const y=window.pageYOffset, up=y<lastScroll;
+        if(y<=0){navbar.classList.add('nav-visible');navInner.classList.replace('sticky','floating')}
+        else if(up){navbar.classList.add('nav-visible');navInner.classList.replace('floating','sticky')}
         else{navbar.classList.add('nav-hidden');navbar.classList.remove('nav-visible')}
-        lastScroll=current;
+        lastScroll=y;
       });
 
       document.querySelectorAll('a[href^="#"]').forEach(a=>{
@@ -355,14 +349,13 @@
           document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
         });
       });
-      mobileBtn.addEventListener('click',()=>mobileMenu.classList.toggle('active'));
+      mobileBtn.addEventListener('click',()=>mobile.classList.toggle('active'));
 
-      // simple mailto composition
-      contactForm.addEventListener('submit',e=>{
+      form.addEventListener('submit',e=>{
         e.preventDefault();
-        const name = encodeURIComponent(document.getElementById('name').value);
-        const email= encodeURIComponent(document.getElementById('email').value);
-        const msg  = encodeURIComponent(document.getElementById('message').value);
+        const name=encodeURIComponent(document.getElementById('name').value);
+        const email=encodeURIComponent(document.getElementById('email').value);
+        const msg=encodeURIComponent(document.getElementById('message').value);
         window.location.href=`mailto:contact@md-consults.com?subject=Website%20Contact%20Form&body=Name:%20${name}%0DEmail:%20${email}%0D%0A${msg}`;
       });
     });
